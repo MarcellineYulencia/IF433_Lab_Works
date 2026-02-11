@@ -1,8 +1,8 @@
 package oop_00000107780_MarcellineYulencia.week02
 
-class Hero(val name: String, var hp: Int = 100, var baseDamage: Int) {
+class Hero(val name: String, var baseDamage: Int, var hp: Int = 100) {
     fun attack(targetName: String) {
-        println("$name menebas $targetName");
+        println("\n$name menebas $targetName");
     }
 
     fun takeDamage(damage: Int) {
