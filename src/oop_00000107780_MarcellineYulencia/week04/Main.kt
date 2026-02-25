@@ -11,4 +11,10 @@ fun main() {
     myCar.openTrunk() // Memanggil method milik sendiri
     myCar.honk()      // Memanggil method yang sudah di-override
     myCar.accelerate()// Memanggil gabungan method Parent dan Child
+
+    println("\n--- Testing ElectricCar ---")
+    val electricCar = ElectricCar("Wuling", 2, 90)
+    electricCar.accelerate()
+    electricCar.honk()
+    electricCar.openTrunk()
 }
