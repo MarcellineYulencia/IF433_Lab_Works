@@ -5,7 +5,7 @@ class EWallet(accountName: String, var balance: Double) : PaymentMethod(accountN
         println("E-Wallet [$accountName] mencoba membayar Rp $amount")
         if (balance >= amount) {
             balance -= amount
-            println("Pembayaran berhasil. Sisa saldo: Rp $balance")
+            println("Pembayaran berhasil. Sisa saldo: Rp $balance\n")
         } else {
             println("Saldo tidak cukup.")
         }
@@ -13,6 +13,6 @@ class EWallet(accountName: String, var balance: Double) : PaymentMethod(accountN
 
     fun topUp(amount: Double) {
         balance += amount
-        println("Top up berhasil. Saldo sekarang: Rp $balance")
+        println("Top up berhasil. Saldo sekarang: Rp $balance\n")
     }
 }

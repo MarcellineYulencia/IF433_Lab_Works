@@ -9,5 +9,11 @@ fun main() {
     println("\n=== SISTEM PEMBAYARAN E-COMMERCE ===")
     for (payment in paymentMethods) {
         payment.processPayment(75000.0)
+
+        if (payment is EWallet) {
+            println("\nSaldo tidak cukup. Melakukan top up otomatis...")
+            payment.topUp(50000.0)
+            payment.processPayment(75000.0)
+        }
     }
 }
