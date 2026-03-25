@@ -45,4 +45,9 @@ fun main() {
 
     GameManager.startGame()
     GameManager.startGame()
+
+    println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val weapon = Weapon.forgeStarterSword()
+    println("Weapon: ${weapon.item.name}, Damage: ${weapon.item.damage}, Durability: ${weapon.durability}")
 }
