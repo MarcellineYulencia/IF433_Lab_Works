@@ -1,5 +1,7 @@
 package oop_00000107780_MarcellineYulencia.week07
 
+import oop_00000107780_MarcellineYulencia.week07.AppState.ApiResponse
+
 fun main() {
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
@@ -26,4 +28,13 @@ fun main() {
 
     val (userName, userAge) = data1 // Destructuring Declaration
     println("Destructured: $userName berumur $userAge")
+
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+
+    // ERROR: 'when' expression must be exhaustive
+    val uiMessage = when (response) {
+        is ApiResponse.Success -> "Tampilkan: ${response.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+    }
 }
