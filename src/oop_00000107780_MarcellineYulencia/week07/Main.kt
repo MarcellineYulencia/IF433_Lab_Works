@@ -40,4 +40,9 @@ fun main() {
     }
 
     println(uiMessage)
+
+    // === TUGAS MANDIRI ===
+
+    GameManager.startGame()
+    GameManager.startGame()
 }
