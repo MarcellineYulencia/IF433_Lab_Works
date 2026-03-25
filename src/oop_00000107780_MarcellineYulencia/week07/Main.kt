@@ -43,6 +43,8 @@ fun main() {
 
     // === TUGAS MANDIRI ===
 
+    println("\n=== TUGAS MANDIRI ===")
+
     GameManager.startGame()
     GameManager.startGame()
 
@@ -50,4 +52,13 @@ fun main() {
 
     val weapon = Weapon.forgeStarterSword()
     println("Weapon: ${weapon.item.name}, Damage: ${weapon.item.damage}, Durability: ${weapon.durability}")
+
+    // Copy item (upgrade)
+    val upgradedItem = weapon.item.copy(damage = 25)
+
+    // Simulasi event
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
