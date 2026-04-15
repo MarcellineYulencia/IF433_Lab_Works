@@ -29,7 +29,7 @@ fun main() {
     )
 
     for (item in mixedData) {
-        val text = item as? String
+        val text = item as? String;
 
         // Hanya cetak jika cast sukses (text tidak null)
         text?.let {
