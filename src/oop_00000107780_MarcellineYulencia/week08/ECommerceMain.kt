@@ -22,7 +22,7 @@ fun main() {
                         println("Clothing: ${product.name}, Size: ${product.size}")
                 }
 
-                parser.checkout(product)
+                parser.checkout(product);
             }
 
         } catch (e: IllegalArgumentException) {
