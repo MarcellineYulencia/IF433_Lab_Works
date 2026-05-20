@@ -11,7 +11,11 @@ fun Student.toCsv(): String = "$name, $age, $gpa"
 // Deserialization (CSV -> Object)
 fun fromCsv(line: String): Student {
     val parts = line.split(",")
-    return Student(parts[0], parts[1].toInt(), parts[2].toDouble())
+    return Student(
+        parts[0].trim(),
+        parts[1].trim().toInt(),
+        parts[2].trim().toDouble()
+    )
 }
 
 fun saveStudents(students: List<Student>, path: String) {
@@ -25,4 +29,16 @@ fun loadStudents(path: String): List<Student> {
         println("Error: File tidak ditemukan!")
         emptyList()
     }
+}
+
+fun main() {
+    val students = listOf(
+        Student("Alice", 20, 3.8),
+        Student("Bob", 22, 3.5)
+    )
+    saveStudents(students, path = "students.csv")
+
+    val loaded = loadStudents("students.csv")
+    println("=== LOADED STUDENT DATA ===")
+    loaded.forEach { println(it) }
 }
